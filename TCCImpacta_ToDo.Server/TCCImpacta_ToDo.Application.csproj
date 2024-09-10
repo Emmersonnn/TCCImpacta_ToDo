@@ -20,6 +20,7 @@
     <ProjectReference Include="..\tccimpacta_todo.client\TCCImpacta_ToDo.WebServer.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\TCCImpacta_ToDo.Entity\TCCImpacta_ToDo.EntityFramework.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCImpacta_ToDo.Application", "TCCImpacta_ToDo.Server\TCCImpacta_ToDo.Application.csproj", "{2387AE17-E3C9-4A5C-846E-28DD512FE127}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCCImpacta_ToDo.Application", "TCCImpacta_ToDo.Server\TCCImpacta_ToDo.Application.csproj", "{2387AE17-E3C9-4A5C-846E-28DD512FE127}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TCCImpacta_ToDo.WebServer", "tccimpacta_todo.client\TCCImpacta_ToDo.WebServer.esproj", "{88019EC0-5211-42F9-A84C-8D905F1D0566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCImpacta_ToDo.EntityFramework", "TCCImpacta_ToDo.Entity\TCCImpacta_ToDo.EntityFramework.csproj", "{A26E389A-4272-4898-A9FA-F2EF5AFA3190}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{88019EC0-5211-42F9-A84C-8D905F1D0566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88019EC0-5211-42F9-A84C-8D905F1D0566}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88019EC0-5211-42F9-A84C-8D905F1D0566}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A26E389A-4272-4898-A9FA-F2EF5AFA3190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26E389A-4272-4898-A9FA-F2EF5AFA3190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26E389A-4272-4898-A9FA-F2EF5AFA3190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26E389A-4272-4898-A9FA-F2EF5AFA3190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
