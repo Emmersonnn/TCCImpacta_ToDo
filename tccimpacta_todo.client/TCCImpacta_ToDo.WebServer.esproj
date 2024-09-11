@@ -7,4 +7,10 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\tccimpacta_todo.client\browser\</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="src\app\tenant\views\register\NovaPasta1\**" />
+    <None Remove="src\app\tenant\views\register\NovaPasta\**" />
+    <TypeScriptConfiguration Remove="src\app\tenant\views\register\NovaPasta1\**" />
+    <TypeScriptConfiguration Remove="src\app\tenant\views\register\NovaPasta\**" />
+  </ItemGroup>
 </Project>
