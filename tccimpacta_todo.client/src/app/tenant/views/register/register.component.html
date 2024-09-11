@@ -27,7 +27,8 @@
         <input type="password" id="confirmpassword" [(ngModel)]="user.confirmasenha" name="confirmasenha" required>
       </div>
       <button type="submit" class="btn-login">Registrar</button>
-      <p *ngIf="responseMessage">{{ responseMessage }}</p>
+      <p style="margin-top: 5px;text-align: center;justify-content:center;margin-left:10px;"
+         *ngIf="responseMessage">{{ responseMessage }}</p>
       <p class="register-link">Já tem uma conta? <a href="login">Clique Aqui</a></p>
     </form>
   </div>

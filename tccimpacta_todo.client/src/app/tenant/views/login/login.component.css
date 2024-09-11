@@ -6,10 +6,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  min-height: 100vh;
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230620/pngtree-a-3d-marketplace-for-shopping-and-beyond-image_3645872.jpg'); /* Imagem de fundo */
+  background-size: cover; /* Faz com que a imagem cubra toda a tela */
+  background-position: center; /* Centraliza a imagem na tela */
+  background-repeat: no-repeat; /* Garante que a imagem não se repita */
+  background-attachment: fixed; /* Mantém a imagem fixa em relação à tela */
+  box-sizing: border-box;
 }
-
 .login-container {
   background-color: white;
   padding: 2rem;
@@ -38,7 +42,7 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
+  width: 93%;
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
