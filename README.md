@@ -9,7 +9,7 @@
 1. **Abra o** **Visual Studio 2022**.
 2. **Vá até a opção** **Clonar Repositório**.
 3. **Cole o URL do repositório do projeto** e siga as instruções para copiar o repositório para o seu ambiente local.
-4. **Configure** `YogaCommerce.Application` **e** `YogaCommerce.WebServer` **como projetos de inicialização**.
+
 
 ## 3️⃣ Instalação do Node.js
 - **Visite o** [site oficial do Node.js](https://nodejs.org/).
