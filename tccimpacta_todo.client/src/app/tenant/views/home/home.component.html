@@ -9,67 +9,25 @@
 <body>
 
   <div class="container">
-    <h1>Lista de Compras do Supermercado</h1>
+    <h1 style="text-align: left">
+      Lista de Compras do Supermercado
+      <input type="text" style="font-size: 12px; margin-left: 29.5%; padding: 10px;" [(ngModel)]="userName" placeholder="Usuário" />
+    </h1>
+
     <div class="add-item-container">
-      <input type="text" id="new-item" placeholder="Adicione um novo item">
-      <input type="number" id="quantity" placeholder="Quantidade">
-      <button onclick="addItem()">Adicionar Item</button>
+      <input type="text" style="margin-right: 10px" [(ngModel)]="newItem" placeholder="Adicione um novo item" />
+      <input type="number" style="margin-right: 10px" [(ngModel)]="quantity" placeholder="Quantidade" />
+      <button (click)="addItem()">Adicionar Item</button>
     </div>
 
     <ul id="shopping-list">
-      <li>
-        <span class="item-name">Feijão</span>
-        <span class="item-quantity">1 kg</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
-      </li>
-      <li>
-        <span class="item-name">Arroz</span>
-        <span class="item-quantity">2 kg</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
-      </li>
-      <li>
-        <span class="item-name">Batata</span>
-        <span class="item-quantity">1.5 kg</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
-      </li>
-      <li>
-        <span class="item-name">Carne</span>
-        <span class="item-quantity">1 kg</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
-      </li>
-      <li>
-        <span class="item-name">Leite</span>
-        <span class="item-quantity">2 L</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
-      </li>
-      <li>
-        <span class="item-name">Pão</span>
-        <span class="item-quantity">1 pacote</span>
-        <button class="remove-btn" onclick="removeItem(this)">Remover</button>
+      <li *ngFor="let item of shoppingList; let i = index">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-quantity">{{ item.quantity }}</span>
+        <button class="remove-btn" (click)="removeItem(i)">Remover</button>
       </li>
     </ul>
   </div>
-
-  <script>
-    function addItem() {
-      const newItem = document.getElementById('new-item').value;
-      const quantity = document.getElementById('quantity').value;
-
-      if (newItem && quantity) {
-        const list = document.getElementById('shopping-list');
-        const li = document.createElement('li');
-        li.innerHTML = `<span class="item-name">${newItem}</span><span class="item-quantity">${quantity}</span><button class="remove-btn" onclick="removeItem(this)">Remover</button>`;
-        list.appendChild(li);
-
-        document.getElementById('new-item').value = '';
-        document.getElementById('quantity').value = '';
-      }
-    }
-
-    function removeItem(button) {
-      button.parentElement.remove();
-    }
-  </script>
 
 </body>
 </html>

@@ -7,11 +7,11 @@ using TCCImpacta_ToDo.EntityFramework.Data.Models;
 
 namespace TCCImpacta_ToDo.Application.Controllers;
 
-public class ToDoController : ControllerBase
+public class AccountController : ControllerBase
 {
     private readonly IRepository<User> _userRepository;
 
-    public ToDoController(IRepository<User> userRepository)
+    public AccountController(IRepository<User> userRepository)
     {
         _userRepository = userRepository;
     }

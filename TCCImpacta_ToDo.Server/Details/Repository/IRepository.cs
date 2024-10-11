@@ -11,4 +11,5 @@ public interface IRepository<T> where T : class
     Task DeleteAsync(int id);
     Task SaveChangesAsync();
     Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
+    Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate);
 }

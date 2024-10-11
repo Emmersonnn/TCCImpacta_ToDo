@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TCCImpacta_ToDo.EntityFramework.Data;
 
@@ -11,9 +12,11 @@ using TCCImpacta_ToDo.EntityFramework.Data;
 namespace TCCImpacta_ToDo.EntityFramework.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241010233604_Add_ShopList")]
+    partial class Add_ShopList
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,12 +44,7 @@ namespace TCCImpacta_ToDo.EntityFramework.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("ShopList");
                 });
@@ -80,17 +78,6 @@ namespace TCCImpacta_ToDo.EntityFramework.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("TCCImpacta_ToDo.EntityFramework.Data.Models.ShopList", b =>
-                {
-                    b.HasOne("TCCImpacta_ToDo.EntityFramework.Data.Models.User", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }

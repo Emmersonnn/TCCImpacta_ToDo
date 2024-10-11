@@ -53,4 +53,9 @@ public class Repository<T> : IRepository<T> where T : class
     {
         return await _dbSet.Where(predicate).FirstOrDefaultAsync();
     }
+
+    public async Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
+    {
+        return await _dbSet.Where(predicate).ToListAsync();
+    }
 }

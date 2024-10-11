@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class LoginComponent {
     senha: ''
   };
   responseMessage = ''; // Mensagem para mostrar ao usuário
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login(): void {
     const backEndUrl = 'https://localhost:7291/login';
@@ -22,6 +23,11 @@ export class LoginComponent {
     this.http.post<any>(backEndUrl, this.user).subscribe(
       response => {
         this.responseMessage = response.message; // Exibe a mensagem retornada do backend
+
+        if (this.responseMessage === 'Usuário logado com sucesso.') {
+          // Redireciona para a página /home
+          this.router.navigate(['/home']);
+        }
       },
       error => {
         if (error.status === 400) {
