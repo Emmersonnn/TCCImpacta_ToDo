@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/tccimpacta_todo.client/src/app/tenant/views/contact/contact.component.css
