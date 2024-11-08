@@ -16,6 +16,8 @@ public class AppDbContext : DbContext
 
     public DbSet<ShopList> ShopList { get; set; }
 
+    public DbSet<ContactUser> ContactUser { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
