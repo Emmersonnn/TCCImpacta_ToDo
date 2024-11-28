@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { HomeComponent } from './tenant/views/home/home.component';
 import { LoginComponent } from './tenant/views/login/login.component';
+import { HomeComponent } from './tenant/views/home/home.component';
 import { RegisterComponent } from './tenant/views/register/register.component';
 import { ContactComponent } from './tenant/views/contact/contact.component';
+import { ResetComponent } from './tenant/views/reset/reset.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'reset', component: ResetComponent }, // Rota para o componente de redefinição
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }

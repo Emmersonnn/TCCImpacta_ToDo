@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Senha - Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="change-password.component.css">
+</head>
+<body>
+  <div class="password-container">
+    <h2>Alterar Senha</h2>
+    <form class="password-form" (ngSubmit)="changePassword()" #changePasswordForm="ngForm">
+
+      <div class="form-group">
+        <label for="current-password">Senha Atual</label>
+        <input type="password" id="current-password" [(ngModel)]="user.currentPassword" name="currentPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label for="new-password">Nova Senha</label>
+        <input type="password" id="new-password" [(ngModel)]="user.newPassword" name="newPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirmar Nova Senha</label>
+        <input type="password" id="confirm-password" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+      </div>
+
+      <p *ngIf="responseMessage" class="response-message">{{ responseMessage }}</p>
+
+      <button type="submit" class="btn-change-password">Alterar Senha</button>
+      <p class="back-link"><a href="login">Voltar para Login</a></p>
+    </form>
+  </div>
+</body>
+</html>
