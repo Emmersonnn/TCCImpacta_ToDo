@@ -15,5 +15,8 @@ public class UsuarioDetail
     public string Senha { get; set; } = string.Empty;
 
     [MaxLength(100)]
+    public string NovaSenha { get; set; } = string.Empty;
+
+    [MaxLength(100)]
     public string ConfirmaSenha { get; set; } = string.Empty;
 }
