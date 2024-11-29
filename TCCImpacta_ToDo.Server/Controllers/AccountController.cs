@@ -20,7 +20,7 @@ public class AccountController : ControllerBase
     [Route("login")]
     public async Task<IActionResult> Login([FromBody] UsuarioDetail input)
     {
-        var usuario = await _userRepository.FirstOrDefaultAsync(x => x.Nome == input.Nome);
+        var usuario = await _userRepository.FirstOrDefaultAsync(x => x.Nome == input.Nome || x.Email == input.Email);
 
         if (usuario is null)
             return BadRequest(new { message = "Usuário ou senha inválidos." });
@@ -31,6 +31,32 @@ public class AccountController : ControllerBase
             return BadRequest(new { message = "Usuário ou senha inválidos." });
 
         return Ok(new { message = "Usuário logado com sucesso." });
+    }
+
+    [HttpPost]
+    [Route("reset")]
+    public async Task<IActionResult> ResetPassword([FromBody] UsuarioDetail input)
+    {
+        var userExist = await Login(input);
+
+        if (userExist is not null)
+        {
+            await UpdatePassword(input);
+            return Ok(new { message = "Senha alterada com sucesso." });
+        }
+
+        return BadRequest(new { message = "Usuário ou senha inválidos." });
+    }
+
+    private async Task UpdatePassword(UsuarioDetail input)
+    {
+        var usuario = await _userRepository.FirstOrDefaultAsync(x => x.Email == input.Email);
+
+        var senhaHash = HashPassword(input.NovaSenha);
+        usuario.Senha = senhaHash;
+
+        await _userRepository.UpdateAsync(usuario);
+        await _userRepository.SaveChangesAsync();
     }
 
     [HttpPost]

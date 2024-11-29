@@ -1,24 +1,25 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './resetPassword.component.html',
+  styleUrls: ['./resetPassword.component.css']
 })
-export class RegisterComponent {
+
+export class ResetComponent {
   user = {
-    nome: '',
     email: '',
     senha: '',
-    confirmasenha: ''
+    novaSenha: ''
   };
   responseMessage = '';
 
   constructor(private http: HttpClient) { }
 
-  registerUser(): void {
-    const apiUrl = 'https://localhost:7291/register';
+  changePassword(): void {
+    const apiUrl = 'https://localhost:7291/reset';
 
     this.http.post<any>(apiUrl, this.user).subscribe(
       response => {
